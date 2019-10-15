@@ -1,26 +1,58 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { Route, Switch, Redirect } from 'react-router-dom'
+import CssBaseline from '@material-ui/core/CssBaseline'
+import { makeStyles } from '@material-ui/core/styles'
 
-function App() {
+import Home from './Home'
+import Header from './Header'
+import { useScrollRestoration } from './utils'
+
+const useStyles = makeStyles(theme => ({
+  root: {
+    display: 'flex',
+    flexDirection: 'column',
+    minHeight: '100vh',
+    zIndex: 10
+  },
+  content: {
+    display: 'flex',
+    flexDirection: 'row',
+    flexGrow: 1
+  },
+  container: {
+    //padding: '15px 15px 60px 15px',
+    top: 150,
+    position: 'relative',
+    width: '100%',
+    zIndex: 10,
+    [theme.breakpoints.down('sm')]: {
+      top: 100
+    }
+  }
+}))
+
+const App = () => {
+  useScrollRestoration()
+  const classes = useStyles()
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <div className={classes.root}>
+        <CssBaseline />
+        <Header />
+        <main className={classes.container}>
+          {/* main component to render */}
+
+          {/* <NavSpacer /> */}
+          <Switch>
+            <Route path="/" exact component={Home} />
+            <Redirect to="/" />
+          </Switch>
+        </main>
+        {/* <Footer /> */}
+      </div>
+    </>
+  )
 }
 
-export default App;
+export default App
