@@ -16,7 +16,7 @@ const useStyles = makeStyles(theme => ({
   },
   content: { zIndex: 3 },
   section: {
-    margin: '50px 0'
+    marginBottom: 150
   }
 }))
 
@@ -33,6 +33,16 @@ const Home = () => {
           <Grid item xs={12} className={classes.section}>
             <ContactMe />
             {/* skills */}
+            {/* <Skills /> */}
+            {/* /font awesome icons 
+            // cat
+            // ski
+            // hike
+            // run
+            // soccer
+            // laptop-code
+            // tv? 
+            // headphones - taylor swift */}
             {/* resume */}
             {/* cat photos (like tip blocks) */}
           </Grid>

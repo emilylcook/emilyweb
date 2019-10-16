@@ -28,6 +28,7 @@ const useStyles = makeStyles(theme => ({
   },
   divider: {
     marginTop: 20,
+    marginBottom: 20,
     marginLeft: 3
   },
   title: {
@@ -134,6 +135,7 @@ const Home = () => {
                     <span className={classes.italics}>Software Developer</span>
                   </Typography>
                   <Divider variant="fullWidth" className={classes.divider} />
+                  <Typography paragraph>lalallalala cats and things and computers</Typography>
                 </div>
 
                 <div className={classes.locationContainer}>
