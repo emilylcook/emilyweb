@@ -13,10 +13,20 @@ const theme = {
       main: '#414141'
     },
     primary: {
-      main: '#0288D1'
+      main: '#70b6c1'
     },
     secondary: {
       main: '#9E9E9E' // intentionally the same as primary
+    }
+  },
+  overrides: {
+    MuiButton: {
+      root: {
+        color: '#fff'
+      },
+      containedPrimary: {
+        color: '#fff'
+      }
     }
   }
 }

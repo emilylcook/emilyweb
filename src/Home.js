@@ -16,7 +16,7 @@ const useStyles = makeStyles(theme => ({
   },
   content: { zIndex: 3 },
   section: {
-    margin: '25px 0'
+    margin: '50px 0'
   }
 }))
 
@@ -32,6 +32,9 @@ const Home = () => {
           </Grid>
           <Grid item xs={12} className={classes.section}>
             <ContactMe />
+            {/* skills */}
+            {/* resume */}
+            {/* cat photos (like tip blocks) */}
           </Grid>
         </Grid>
       </WidthContainer>

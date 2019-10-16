@@ -18,18 +18,12 @@ export default function ButtonAppBar() {
   return (
     <Grid justify="flex-end" container spacing={24}>
       <Grid item>
-        <Button color="inherit" className={classes.navButton} component={Link} smooth to="#whoIAm">
+        <Button className={classes.navButton} component={Link} smooth to="#whoIAm">
           About
         </Button>
       </Grid>
       <Grid item className={classes.navItem}>
-        <Button
-          color="inherit"
-          className={classes.navButton}
-          component={Link}
-          smooth
-          to="#contactMe"
-        >
+        <Button className={classes.navButton} component={Link} smooth to="#contactMe">
           Contact
         </Button>
       </Grid>

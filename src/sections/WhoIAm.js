@@ -1,5 +1,5 @@
 import React from 'react'
-import { Icon, Typography, Grid, Avatar } from '@material-ui/core'
+import { Icon, Typography, Grid, Avatar, Divider } from '@material-ui/core'
 import { makeStyles, darken, lighten } from '@material-ui/core/styles'
 import clsx from 'clsx'
 import 'font-awesome/css/font-awesome.css'
@@ -18,8 +18,17 @@ const useStyles = makeStyles(theme => ({
     paddingBottom: 5,
     minHeight: 500,
     [theme.breakpoints.down('sm')]: {
-      padding: '15px 20px'
+      padding: '15px 20px',
+      paddingBottom: 5,
+      paddingRight: 0
     }
+  },
+  top: {
+    paddingRight: 50
+  },
+  divider: {
+    marginTop: 20,
+    marginLeft: 3
   },
   title: {
     fontWeight: 300,
@@ -64,8 +73,8 @@ const useStyles = makeStyles(theme => ({
       height: 320
     },
     [theme.breakpoints.down('xs')]: {
-      width: 400,
-      height: 400
+      width: 360,
+      height: 360
     }
   },
   profilePhoto: {
@@ -77,6 +86,9 @@ const useStyles = makeStyles(theme => ({
   aboutMe: {
     paddingTop: 10,
     paddingLeft: 40,
+    [theme.breakpoints.down('xs')]: {
+      paddingTop: 40
+    },
     [theme.breakpoints.down('md')]: {
       paddingLeft: 0
     },
@@ -90,7 +102,11 @@ const useStyles = makeStyles(theme => ({
     alignItems: 'bottom',
     alignContent: 'bottom',
     justifyContent: 'flex-end',
-    paddingRight: 10
+    paddingRight: 10,
+    color: lighten(theme.palette.text.primary, 0.4),
+    [theme.breakpoints.down('xs')]: {
+      paddingTop: 40
+    }
   },
   locationIcon: { marginRight: 5 },
   locationText: { paddingTop: 2 }
@@ -115,8 +131,9 @@ const Home = () => {
                     Hello, I'm <span className={classes.bold}>Emily</span>.
                   </Typography>
                   <Typography variant="h5" className={classes.subTitle}>
-                    <span className={classes.italics}>Software Developer and Cat Mom</span>
+                    <span className={classes.italics}>Software Developer</span>
                   </Typography>
+                  <Divider variant="fullWidth" className={classes.divider} />
                 </div>
 
                 <div className={classes.locationContainer}>
