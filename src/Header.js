@@ -27,7 +27,11 @@ const useStyles = makeStyles(theme => ({
     right: 0,
     zIndex: -1,
     backgroundColor: 'rgba(36, 109, 117, .9)',
-    boxShadow: '0px 10px 5px #EDEDED'
+    boxShadow: '0px 10px 5px #EDEDED',
+
+    [theme.breakpoints.down('sm')]: {
+      height: 400
+    }
   },
   nav: {
     position: 'absolute',
