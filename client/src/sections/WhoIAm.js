@@ -20,6 +20,7 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down('sm')]: {
       padding: '15px 20px',
       paddingBottom: 5,
+      paddingLeft: 0,
       paddingRight: 0
     }
   },
@@ -74,8 +75,8 @@ const useStyles = makeStyles(theme => ({
       height: 320
     },
     [theme.breakpoints.down('xs')]: {
-      width: 360,
-      height: 360
+      width: 280,
+      height: 280
     }
   },
   profilePhoto: {
@@ -92,6 +93,9 @@ const useStyles = makeStyles(theme => ({
     },
     [theme.breakpoints.down('md')]: {
       paddingLeft: 0
+    },
+    [theme.breakpoints.down('sm')]: {
+      paddingLeft: 10
     },
 
     display: 'flex',
@@ -135,7 +139,9 @@ const Home = () => {
                     <span className={classes.italics}>Software Developer</span>
                   </Typography>
                   <Divider variant="fullWidth" className={classes.divider} />
-                  <Typography paragraph>lalallalala cats and things and computers</Typography>
+                  <Typography paragraph>
+                    lalallalala cats and things and computers exploring apis
+                  </Typography>
                 </div>
 
                 <div className={classes.locationContainer}>

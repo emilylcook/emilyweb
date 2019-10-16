@@ -1,0 +1,46 @@
+{
+  "name": "emilyweb",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "lint-staged": "8.1.6",
+    "nodemon": "^1.19.4",
+    "prettier": "^1.18.2"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "start:dev": "./node_modules/.bin/nodemon index.js --watch src/ --watch index.js",
+    "test": "jest"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "printWidth": 100,
+    "semi": false
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,json,css}": [
+      "prettier --single-quote --write",
+      "git add"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
