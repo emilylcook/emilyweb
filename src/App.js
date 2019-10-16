@@ -21,12 +21,12 @@ const useStyles = makeStyles(theme => ({
   },
   container: {
     //padding: '15px 15px 60px 15px',
-    top: 150,
+    top: 100,
     position: 'relative',
     width: '100%',
     zIndex: 10,
     [theme.breakpoints.down('sm')]: {
-      top: 100
+      top: -10
     }
   }
 }))
@@ -36,7 +36,7 @@ const App = () => {
   const classes = useStyles()
 
   return (
-    <>
+    <div>
       <div className={classes.root}>
         <CssBaseline />
         <Header />
@@ -51,7 +51,7 @@ const App = () => {
         </main>
         {/* <Footer /> */}
       </div>
-    </>
+    </div>
   )
 }
 
