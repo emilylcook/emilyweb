@@ -9,6 +9,10 @@ const useStyles = makeStyles(theme => ({
     padding: '10px 15px',
     borderRadius: 5,
     transition: 'all 1s'
+  },
+  listItem: {
+    textDecoration: 'none !important',
+    color: '#fff'
   }
 }))
 
@@ -16,15 +20,19 @@ export default function ButtonAppBar() {
   const classes = useStyles()
 
   return (
-    <Grid justify="flex-end" container spacing={24}>
+    <Grid justify="flex-end" container spacing={2}>
       <Grid item>
-        <Button className={classes.navButton} component={Link} smooth to="#whoIAm">
-          About
+        <Button className={classes.navButton}>
+          <Link smooth to="#whoIAm" className={classes.listItem}>
+            About
+          </Link>
         </Button>
       </Grid>
       <Grid item className={classes.navItem}>
-        <Button className={classes.navButton} component={Link} smooth to="#contactMe">
-          Contact
+        <Button className={classes.navButton}>
+          <Link smooth to="#contactMe" className={classes.listItem}>
+            Contact
+          </Link>
         </Button>
       </Grid>
     </Grid>

@@ -116,19 +116,22 @@ const Home = () => {
             <Grid container>
               <Grid item xs={12} sm={12} md={7}>
                 <Grid container>
-                  {Object.entries(inputs).map(([name, args]) => (
-                    <Grid key={name} item {...args.gridWidth} className={classes.item}>
-                      <TextField
-                        {...args.inputType({
-                          name
-                        })}
-                        fullWidth
-                        {...args}
-                        error={formState.errors[name] ? true : false}
-                        helperText={formState.errors[name]}
-                      />
-                    </Grid>
-                  ))}
+                  {Object.entries(inputs).map(
+                    ([index, { gridWidth, name, inputType, ...rest }]) => (
+                      <Grid key={index} item {...gridWidth} className={classes.item}>
+                        <TextField
+                          {...inputType({
+                            name
+                          })}
+                          name={name}
+                          fullWidth
+                          {...rest}
+                          error={formState.errors[name] ? true : false}
+                          helperText={formState.errors[name]}
+                        />
+                      </Grid>
+                    )
+                  )}
                   <Grid item xs={12} className={classes.submitButton}>
                     <Button
                       disabled={disableSubmit}
