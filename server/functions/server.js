@@ -1,5 +1,4 @@
-require('dotenv').config()
-
+const functions = require('firebase-functions')
 const express = require('express')
 const cors = require('cors')
 const app = express()
@@ -10,9 +9,10 @@ app.use(bodyParser.json())
 // using Twilio SendGrid's v3 Node.js Library
 // https://github.com/sendgrid/sendgrid-nodejs
 const sgMail = require('@sendgrid/mail')
-sgMail.setApiKey(process.env.SENDGRID_API_KEY)
 
-var whitelist = process.env.ALLOWED_DOMAINS || []
+sgMail.setApiKey(functions.config().sendgrid.key)
+
+var whitelist = functions.config().alloweddomains.key
 var corsOptions = {
   origin: function(origin, callback) {
     if (whitelist.indexOf(origin) !== -1 || !origin) {

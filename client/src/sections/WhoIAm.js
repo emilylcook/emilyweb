@@ -168,8 +168,8 @@ const WhoIAm = () => {
                   <Divider variant="fullWidth" className={classes.divider} />
                   <Typography paragraph>
                     I've always been drawn to how much of a puzzle programming can be. I love and
-                    crave the challenge of something new, whether it be a new technology, language,
-                    or api I will always dive in head first. This is why I have been a consultant
+                    crave the challenge of something new. Whether it is a new technology, language,
+                    or API, I will always dive in head first. This is why I have been a consultant
                     for almost five years. Being a consultant has allowed me to dip my toes in many
                     different things and experience a little of everything the web has to offer. My
                     current passion is react Node and React with a material ui design.

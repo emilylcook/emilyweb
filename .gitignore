@@ -42,6 +42,8 @@ yarn-error.log*
 # production
 /server/build
 
+/server/functions/.runtimeconfig.json
+
 
 # misc
 .DS_Store
