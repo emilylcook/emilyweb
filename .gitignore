@@ -37,6 +37,7 @@ yarn-error.log*
 /client/.env.production.local
 
 /server/.env
+
 /server/node_modules
 /server/coverage
 # production

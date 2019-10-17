@@ -44,6 +44,7 @@ const App = () => {
           {/* main component to render */}
 
           {/* <NavSpacer /> */}
+
           <Switch>
             <Route path="/" exact component={Home} />
             <Redirect to="/" />

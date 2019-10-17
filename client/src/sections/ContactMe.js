@@ -1,50 +1,15 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 // import Grid from '@material-ui/core/Grid'
 import { TextField, Typography, Avatar, Grid, Button } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 import { useFormState } from 'react-use-form-state'
+import axios from 'axios'
+import { useSnackbar } from 'notistack'
 
 import WidthContainer from '../WidthContainer'
 import catImg from '../assets/catContact.jpg'
 import { isFormSubmitDisabled } from '../utils'
-
-const useStyles = makeStyles(theme => ({
-  catPhoto: {
-    display: 'flex',
-    justifyContent: 'flex-end',
-    [theme.breakpoints.down('md')]: {
-      justifyContent: 'center',
-      alignItems: 'center',
-      alignContent: 'center'
-    }
-  },
-  avatar: {
-    margin: 10,
-    width: 300,
-    height: 300,
-    [theme.breakpoints.down('md')]: {
-      marginTop: 50,
-      width: 350,
-      height: 350
-    },
-    [theme.breakpoints.down('sm')]: {
-      marginTop: 50,
-      width: 280,
-      height: 280
-    }
-  },
-  title: {
-    marginBottom: 40,
-    textAlign: 'center'
-  },
-  item: {
-    padding: '10px 0'
-  },
-  submitButton: {
-    textAlign: 'right',
-    paddingTop: 20
-  }
-}))
+import config from '../config'
 
 // TODO
 // send email with api
@@ -52,6 +17,8 @@ const useStyles = makeStyles(theme => ({
 const Home = () => {
   const classes = useStyles()
   const [formState, { text, email }] = useFormState({})
+  const [emailSent, setEmailSent] = useState(false)
+  const { enqueueSnackbar } = useSnackbar()
 
   const inputs = {
     name: {
@@ -99,6 +66,40 @@ const Home = () => {
     }
   }
 
+  function sendEmail() {
+    const { subject, message, email } = formState.values
+    axios
+      .post(`${config.API}/sendEmail`, {
+        subject,
+        message,
+        fromEmail: email
+      })
+      .then(function(response) {
+        setEmailSent(true)
+        // TODO set response then have a use effect on the response
+      })
+      .catch(function(error) {
+        setEmailSent(false)
+      })
+  }
+
+  useEffect(() => {
+    const touchedForm = Object.keys(formState.touched).some(name => {
+      return formState.touched[name]
+    })
+
+    if (emailSent && touchedForm) {
+      formState.reset()
+
+      enqueueSnackbar('Email Sent', {
+        variant: 'success',
+        autoHideDuration: 4500
+      })
+
+      setEmailSent(false)
+    }
+  }, [emailSent, formState, enqueueSnackbar])
+
   const disableSubmit = isFormSubmitDisabled(inputs, formState)
 
   // TODO
@@ -138,6 +139,7 @@ const Home = () => {
                       variant="contained"
                       color="primary"
                       className={classes.button}
+                      onClick={sendEmail}
                     >
                       Send Email
                     </Button>
@@ -156,3 +158,41 @@ const Home = () => {
 }
 
 export default Home
+
+const useStyles = makeStyles(theme => ({
+  catPhoto: {
+    display: 'flex',
+    justifyContent: 'flex-end',
+    [theme.breakpoints.down('md')]: {
+      justifyContent: 'center',
+      alignItems: 'center',
+      alignContent: 'center'
+    }
+  },
+  avatar: {
+    margin: 10,
+    width: 300,
+    height: 300,
+    [theme.breakpoints.down('md')]: {
+      marginTop: 50,
+      width: 350,
+      height: 350
+    },
+    [theme.breakpoints.down('sm')]: {
+      marginTop: 50,
+      width: 280,
+      height: 280
+    }
+  },
+  title: {
+    marginBottom: 40,
+    textAlign: 'center'
+  },
+  item: {
+    padding: '10px 0'
+  },
+  submitButton: {
+    textAlign: 'right',
+    paddingTop: 20
+  }
+}))
