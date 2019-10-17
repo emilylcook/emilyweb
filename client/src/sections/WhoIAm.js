@@ -121,7 +121,21 @@ const useStyles = makeStyles(theme => ({
     }
   },
   locationIcon: { marginRight: 5 },
-  locationText: { paddingTop: 2 }
+  locationText: { paddingTop: 2 },
+  educationContainer: {
+    marginTop: 5,
+    display: 'flex',
+    alignItems: 'bottom',
+    alignContent: 'bottom',
+    justifyContent: 'flex-start',
+    paddingRight: 10,
+    color: lighten(theme.palette.text.primary, 0.4),
+    [theme.breakpoints.down('xs')]: {
+      // paddingTop: 40
+    }
+  },
+  educationIcon: { marginRight: 5, fontSize: '1.2rem', width: 'auto' },
+  educationText: { paddingTop: 2, fontSize: '.8rem' }
 }))
 
 const WhoIAm = () => {
@@ -144,10 +158,21 @@ const WhoIAm = () => {
                   </Typography>
                   <Typography variant="h5" className={classes.subTitle}>
                     <span className={classes.italics}>Software Developer</span>
-                  </Typography>
+                  </Typography>{' '}
+                  <div className={classes.educationContainer}>
+                    <Icon className={clsx(classes.educationIcon, 'fa fa-graduation-cap')} />{' '}
+                    <Typography className={classes.educationText}>
+                      BS Computer Science, WWU
+                    </Typography>
+                  </div>
                   <Divider variant="fullWidth" className={classes.divider} />
                   <Typography paragraph>
-                    lalallalala cats and things and computers exploring apis
+                    I've always been drawn to how much of a puzzle programming can be. I love and
+                    crave the challenge of something new, whether it be a new technology, language,
+                    or api I will always dive in head first. This is why I have been a consultant
+                    for almost five years. Being a consultant has allowed me to dip my toes in many
+                    different things and experience a little of everything the web has to offer. My
+                    current passion is react Node and React with a material ui design.
                   </Typography>
                 </div>
 

@@ -47,10 +47,8 @@ const useStyles = makeStyles(theme => ({
       color: darken('#FFF', 0.25)
     },
     [theme.breakpoints.down('sm')]: {
-      // width: 75,
       margin: 15,
       fontSize: '1.6rem'
-      // marginB1.3ttom: 10
     }
   },
   divider: {
