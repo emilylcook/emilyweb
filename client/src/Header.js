@@ -9,7 +9,6 @@ import MobileNav from './MobileNav'
 
 const useStyles = makeStyles(theme => ({
   root: {
-    // flexGrow: 1
     minHeight: 64,
     zIndex: 100,
     backgroundColor: '#407982',
@@ -38,8 +37,7 @@ const useStyles = makeStyles(theme => ({
     zIndex: 3,
     width: '100%'
   },
-  navItem: {
-    // marginLeft: 20,
+  navItem: {ƒ
     marginRight: 20
   },
   navButton: {
