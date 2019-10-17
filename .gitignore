@@ -5,6 +5,8 @@
 /.pnp
 .pnp.js
 
+*.js
+
 # testing
 /coverage
 
@@ -34,15 +36,13 @@ yarn-error.log*
 /client/.env.test.local
 /client/.env.production.local
 
-
+/server/.env
 /server/node_modules
 /server/coverage
 # production
 /server/build
 
+
 # misc
 .DS_Store
-/server/.env.local
-/server/.env.development.local
-/server/.env.test.local
-/server/.env.production.local
+

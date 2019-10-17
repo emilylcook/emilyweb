@@ -14,6 +14,7 @@ const useStyles = makeStyles(theme => ({
   },
   mainContent: {
     padding: '40px 50px',
+    paddingTop: 0,
     paddingRight: 0,
     paddingBottom: 5,
     minHeight: 500,
@@ -35,7 +36,12 @@ const useStyles = makeStyles(theme => ({
   title: {
     fontWeight: 300,
     [theme.breakpoints.down('sm')]: {
-      fontSize: '3rem'
+      fontSize: '2rem'
+    }
+  },
+  subTitle: {
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '1.2rem'
     }
   },
   iconContainer: {
@@ -75,8 +81,9 @@ const useStyles = makeStyles(theme => ({
       height: 320
     },
     [theme.breakpoints.down('xs')]: {
-      width: 280,
-      height: 280
+      marginTop: 20,
+      width: 240,
+      height: 240
     }
   },
   profilePhoto: {
@@ -86,7 +93,7 @@ const useStyles = makeStyles(theme => ({
     display: 'flex'
   },
   aboutMe: {
-    paddingTop: 10,
+    paddingTop: 50,
     paddingLeft: 40,
     [theme.breakpoints.down('xs')]: {
       paddingTop: 40
@@ -95,7 +102,8 @@ const useStyles = makeStyles(theme => ({
       paddingLeft: 0
     },
     [theme.breakpoints.down('sm')]: {
-      paddingLeft: 10
+      paddingLeft: 20,
+      paddingTop: 20
     },
 
     display: 'flex',
