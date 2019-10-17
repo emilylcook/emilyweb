@@ -2,7 +2,6 @@ import React from 'react'
 import { Icon, Typography, Grid, Avatar, Divider } from '@material-ui/core'
 import { makeStyles, darken, lighten } from '@material-ui/core/styles'
 import clsx from 'clsx'
-import 'font-awesome/css/font-awesome.css'
 
 import WidthContainer from '../WidthContainer'
 import profilePhoto from '../assets/photo.jpg'
@@ -167,7 +166,7 @@ const Home = () => {
               rel="noopener noreferrer"
               target="_blank"
             >
-              <Icon className={clsx(classes.icon, 'fa fa-linkedin')} />
+              <Icon className={clsx(classes.icon, 'fab fa-linkedin-in')} />
             </a>
             <a
               href="https://www.instagram.com/fulminee/"
@@ -175,7 +174,7 @@ const Home = () => {
               rel="noopener noreferrer"
               target="_blank"
             >
-              <Icon className={clsx(classes.icon, 'fa fa-instagram')} />
+              <Icon className={clsx(classes.icon, 'fab fa-instagram')} />
             </a>
             <a
               href="mailto:emilycookx@gmail.com"

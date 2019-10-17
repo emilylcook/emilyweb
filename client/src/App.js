@@ -2,6 +2,7 @@ import React from 'react'
 import { Route, Switch, Redirect } from 'react-router-dom'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import { makeStyles } from '@material-ui/core/styles'
+import '@fortawesome/fontawesome-free/css/all.css'
 
 import Home from './Home'
 import Header from './Header'

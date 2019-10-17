@@ -37,7 +37,7 @@ const useStyles = makeStyles(theme => ({
     zIndex: 3,
     width: '100%'
   },
-  navItem: {ƒ
+  navItem: {
     marginRight: 20
   },
   navButton: {
