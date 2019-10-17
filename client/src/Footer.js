@@ -1,8 +1,6 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 
-import { navItems } from './utils'
-
 const useStyles = makeStyles(theme => ({
   footer: {
     height: 200,

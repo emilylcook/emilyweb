@@ -37,9 +37,6 @@ const useStyles = makeStyles(theme => ({
       fontSize: '1.2rem'
     }
   },
-  iconContainer: {
-    margin: '5px 10px'
-  },
   icon: {
     color: '#70b6c1',
     margin: '0 20px',
@@ -129,10 +126,6 @@ const interests = {
   soccer: {
     icon: 'fa fa-futbol',
     title: 'Sounders'
-  },
-  cat: {
-    icon: 'fa fa-cat',
-    title: 'Cats'
   },
   hiking: {
     icon: 'fa fa-hiking',

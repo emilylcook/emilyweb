@@ -1,15 +1,12 @@
 import React from 'react'
-import { Icon, Typography, Grid, Tooltip, Divider } from '@material-ui/core'
+import { Typography, Grid, Divider } from '@material-ui/core'
 import { makeStyles, darken } from '@material-ui/core/styles'
-import clsx from 'clsx'
 
 import WidthContainer from '../WidthContainer'
 
 const useStyles = makeStyles(theme => ({
   box: {
     padding: 40
-    // backgroundColor: '#fff',
-    // boxShadow: '0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24)'
   },
   mainContent: {
     padding: '40px 50px',
@@ -36,9 +33,6 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down('sm')]: {
       fontSize: '1.2rem'
     }
-  },
-  iconContainer: {
-    margin: '5px 10px'
   },
   icon: {
     color: '#70b6c1',
