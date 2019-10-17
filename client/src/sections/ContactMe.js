@@ -112,7 +112,9 @@ const Home = () => {
           <Typography variant="h3" className={classes.title}>
             Contact Me
           </Typography>
-          {/* <Typography variant="h5">Contact Me</Typography> */}
+          <Typography variant="subtitle2" className={classes.subTitle}>
+            *Resume available upon request
+          </Typography>
           <form>
             <Grid container>
               <Grid item xs={12} sm={12} md={7}>
@@ -184,8 +186,13 @@ const useStyles = makeStyles(theme => ({
       height: 280
     }
   },
-  title: {
+  subTitle: {
     marginBottom: 40,
+    textAlign: 'center',
+    color: 'rgb(141, 141, 141)',
+    marginLeft: 35
+  },
+  title: {
     textAlign: 'center'
   },
   item: {

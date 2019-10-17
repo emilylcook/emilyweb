@@ -5,6 +5,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import '@fortawesome/fontawesome-free/css/all.css'
 
 import Home from './Home'
+import Footer from './Footer'
 import Header from './Header'
 import { useScrollRestoration } from './utils'
 
@@ -50,8 +51,8 @@ const App = () => {
             <Route path="/" exact component={Home} />
             <Redirect to="/" />
           </Switch>
+          <Footer />
         </main>
-        {/* <Footer /> */}
       </div>
     </div>
   )

@@ -4,9 +4,11 @@ import Button from '@material-ui/core/Button'
 import Grid from '@material-ui/core/Grid'
 import { HashLink as Link } from 'react-router-hash-link'
 
+import { navItems } from './utils'
+
 const useStyles = makeStyles(theme => ({
   navButton: {
-    padding: '10px 15px',
+    padding: '10px 5px',
     borderRadius: 5,
     transition: 'all 1s'
   },
@@ -21,20 +23,15 @@ export default function ButtonAppBar() {
 
   return (
     <Grid justify="flex-end" container spacing={2}>
-      <Grid item>
-        <Button className={classes.navButton}>
-          <Link smooth to="#whoIAm" className={classes.listItem}>
-            About
-          </Link>
-        </Button>
-      </Grid>
-      <Grid item className={classes.navItem}>
-        <Button className={classes.navButton}>
-          <Link smooth to="#contactMe" className={classes.listItem}>
-            Contact
-          </Link>
-        </Button>
-      </Grid>
+      {Object.entries(navItems).map(([key, { to, label }]) => (
+        <Grid key={key} item className={classes.navItem}>
+          <Button className={classes.navButton}>
+            <Link smooth to={to} className={classes.listItem}>
+              {label}
+            </Link>
+          </Button>
+        </Grid>
+      ))}
     </Grid>
   )
 }

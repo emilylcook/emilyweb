@@ -4,7 +4,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import clsx from 'clsx'
 
 import WidthContainer from './WidthContainer'
-import { WhoIAm, ContactMe, Interests } from './sections'
+import { WhoIAm, ContactMe, Interests, AboutMe } from './sections'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -16,10 +16,22 @@ const useStyles = makeStyles(theme => ({
   },
   content: { zIndex: 3 },
   section: {
-    marginBottom: 250
+    marginBottom: 200,
+    [theme.breakpoints.down('xs')]: {
+      // width: 75,
+
+      marginBottom: 150
+      // marginB1.3ttom: 10
+    }
   },
-  interests: {
-    // marginBottom: 300
+  contactMe: {
+    marginBottom: 50
+  },
+  aboutMe: {
+    marginBottom: 150
+  },
+  whoIAm: {
+    marginBottom: 20
   }
 }))
 
@@ -34,24 +46,16 @@ const Home = () => {
     <div className={classes.content}>
       <WidthContainer className={classes.columnWrapper}>
         <Grid container>
-          <Grid item xs={12} className={classes.section}>
+          <Grid item xs={12} className={clsx(classes.section, classes.whoIAm)}>
             <WhoIAm />
+          </Grid>
+          <Grid item xs={12} className={clsx(classes.section, classes.aboutMe)}>
+            <AboutMe />
           </Grid>
           <Grid item xs={12} className={clsx(classes.section, classes.interests)}>
             <Interests />
-            {/* /font awesome icons 
-            // cat
-            // ski
-            // hike
-            // run
-            // soccer
-            // laptop-code
-            // tv? 
-            // headphones - taylor swift */}
-            {/* resume */}
-            {/* cat photos (like tip blocks) */}
           </Grid>
-          <Grid item xs={12} className={classes.section}>
+          <Grid item xs={12} className={clsx(classes.section, classes.contactMe)}>
             <ContactMe />
           </Grid>
 

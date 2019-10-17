@@ -124,7 +124,7 @@ const useStyles = makeStyles(theme => ({
   locationText: { paddingTop: 2 }
 }))
 
-const Home = () => {
+const WhoIAm = () => {
   const classes = useStyles()
 
   return (
@@ -191,4 +191,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default WhoIAm

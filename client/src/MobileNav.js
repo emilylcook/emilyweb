@@ -9,6 +9,8 @@ import { HashLink as Link } from 'react-router-hash-link'
 import { makeStyles } from '@material-ui/core/styles'
 import { Typography } from '@material-ui/core'
 
+import { navItems } from './utils'
+
 const useStyles = makeStyles(theme => ({
   menuIcon: {
     color: 'white',
@@ -60,20 +62,15 @@ export default function MobileNav() {
         >
           <List id="MobileNavItems">
             {/* main nav items */}
-            <ListItem button>
-              <ListItemText>
-                <Link smooth to="#whoIAm" className={classes.listItem}>
-                  <Typography className={classes.listItemText}>About</Typography>
-                </Link>
-              </ListItemText>
-            </ListItem>
-            <ListItem button>
-              <ListItemText>
-                <Link smooth to="#contactMe" className={classes.listItem}>
-                  <Typography className={classes.listItemText}>Contact</Typography>
-                </Link>
-              </ListItemText>
-            </ListItem>
+            {Object.entries(navItems).map(([key, { to, label }]) => (
+              <ListItem button>
+                <ListItemText>
+                  <Link smooth to={to} className={classes.listItem}>
+                    <Typography className={classes.listItemText}>{label}</Typography>
+                  </Link>
+                </ListItemText>
+              </ListItem>
+            ))}
           </List>
         </div>
       </SwipeableDrawer>

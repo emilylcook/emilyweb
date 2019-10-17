@@ -1,4 +1,5 @@
 import { useScrollRestoration } from './scrollRestoration'
+import navItems from './navItems'
 
 const isFormSubmitDisabled = (inputs, formState) => {
   const requiredFields = Object.entries(inputs).flatMap(([name, args]) =>
@@ -18,4 +19,4 @@ const isFormSubmitDisabled = (inputs, formState) => {
   return disableSubmit
 }
 
-export { useScrollRestoration, isFormSubmitDisabled }
+export { useScrollRestoration, isFormSubmitDisabled, navItems }
