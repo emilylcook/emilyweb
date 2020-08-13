@@ -15,9 +15,10 @@ sgMail.setApiKey(functions.config().sendgrid.key)
 var whitelist = functions.config().alloweddomains.key
 var corsOptions = {
   origin: function(origin, callback) {
-    if (whitelist.indexOf(origin) !== -1 || !origin) {
+    if ('https://emilycook.me' === origin || !origin) {
       callback(null, true)
     } else {
+      console.log('whitelist hiii')
       console.log(origin)
       callback(new Error('Not allowed by CORS'))
     }
@@ -25,6 +26,10 @@ var corsOptions = {
 }
 
 app.use(cors(corsOptions))
+
+app.get('test', function(req, res, next) {
+  res.send('Cat')
+})
 
 app.post('/sendEmail/', function(req, res, next) {
   try {

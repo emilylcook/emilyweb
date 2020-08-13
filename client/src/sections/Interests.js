@@ -72,7 +72,7 @@ const Interests = () => {
   const classes = useStyles()
 
   return (
-    <section id="interests">
+    <section className={classes.marginTop}>
       <WidthContainer>
         <Grid container justify="center">
           <Grid xs={12} item>

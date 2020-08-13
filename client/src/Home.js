@@ -31,13 +31,9 @@ const useStyles = makeStyles(theme => ({
     marginBottom: 150
   },
   whoIAm: {
-    marginBottom: 20
+    marginBottom: 50
   }
 }))
-
-// TODO
-// make nav object in json that both navs pull rom
-// :)
 
 const Home = () => {
   const classes = useStyles()
@@ -49,13 +45,13 @@ const Home = () => {
           <Grid item xs={12} className={clsx(classes.section, classes.whoIAm)}>
             <WhoIAm />
           </Grid>
-          <Grid item xs={12} className={clsx(classes.section, classes.aboutMe)}>
+          <Grid id="aboutMe" item xs={12} className={clsx(classes.section, classes.aboutMe)}>
             <AboutMe />
           </Grid>
-          <Grid item xs={12} className={clsx(classes.section, classes.interests)}>
+          <Grid id="interests" item xs={12} className={clsx(classes.section, classes.interests)}>
             <Interests />
           </Grid>
-          <Grid item xs={12} className={clsx(classes.section, classes.contactMe)}>
+          <Grid id="contactMe" item xs={12} className={clsx(classes.section, classes.contactMe)}>
             <ContactMe />
           </Grid>
 

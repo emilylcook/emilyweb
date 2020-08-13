@@ -107,7 +107,7 @@ const Home = () => {
 
   return (
     <WidthContainer>
-      <section id="contactMe">
+      <section>
         <div className={classes.section}>
           <Typography variant="h3" className={classes.title}>
             Contact Me

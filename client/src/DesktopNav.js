@@ -26,7 +26,12 @@ export default function ButtonAppBar() {
       {Object.entries(navItems).map(([key, { to, label }]) => (
         <Grid key={key} item className={classes.navItem}>
           <Button className={classes.navButton}>
-            <Link smooth to={to} className={classes.listItem}>
+            <Link
+              smooth
+              to={to}
+              className={classes.listItem}
+              scroll={el => el.scrollIntoView({ behavior: 'smooth', block: 'start' })}
+            >
               {label}
             </Link>
           </Button>

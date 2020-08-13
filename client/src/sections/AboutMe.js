@@ -4,21 +4,56 @@ import { makeStyles, darken } from '@material-ui/core/styles'
 
 import WidthContainer from '../WidthContainer'
 
+const AboutMe = () => {
+  const classes = useStyles()
+
+  return (
+    <section>
+      <WidthContainer>
+        <Grid container justify="center">
+          <Grid xs={12} item>
+            <Grid container justify="center" className={classes.box}>
+              <Grid item xs={12} className={classes.heading}>
+                <Typography gutterBottom variant="h3" className={classes.title}>
+                  About Me
+                </Typography>
+                <Typography paragraph className={classes.mainContent}>
+                  I was born and raised in the greater Seattle area and still reside there with my
+                  two cats, Sterling and Nyla. I received my BS in Computer Science in 2013, and
+                  have worked in the field happily since. I would describe myself as a competive
+                  person, and I think my friends would tell you that is an understatement. My
+                  competitive spirit was born while growing up in a family of six with a twin
+                  sister, whom was naturally my best friend and worst enemy. I believe my competive
+                  nature drives me to be a result-oriented person. I am always keeping task lists
+                  and making sure to check that I and my team are on track to reach our goals. I
+                  find excitement in the pressure of an approaching deadline, as that's when my
+                  competitive nature to meet the deadline can really kick in. The three things I
+                  value the most in others are accountability, efficency, and kindness. I believe
+                  you should always keep your word by being honest to yourself and others about what
+                  you can accomplish.
+                </Typography>
+              </Grid>
+              <Grid item xs={12} className={classes.dividerContainer}>
+                <Divider variant="middle" className={classes.divider} />
+              </Grid>
+            </Grid>
+          </Grid>
+        </Grid>
+      </WidthContainer>
+    </section>
+  )
+}
+
 const useStyles = makeStyles(theme => ({
   box: {
-    padding: 40
+    padding: 40,
+    [theme.breakpoints.down('xs')]: {
+      padding: 20
+    }
   },
   mainContent: {
-    padding: '40px 50px',
-    paddingTop: 0,
-    paddingRight: 0,
-    paddingBottom: 5,
-    minHeight: 500,
-    [theme.breakpoints.down('sm')]: {
-      padding: '15px 20px',
-      paddingBottom: 5,
-      paddingLeft: 0,
-      paddingRight: 0
+    [theme.breakpoints.down('xs')]: {
+      textAlign: 'left'
     }
   },
   top: {
@@ -51,7 +86,8 @@ const useStyles = makeStyles(theme => ({
     }
   },
   divider: {
-    width: 200,
+    width: 600,
+    maxWidth: '80vw',
     textAlign: 'center',
     margin: 'auto'
   },
@@ -66,41 +102,5 @@ const useStyles = makeStyles(theme => ({
     marginBottom: 10
   }
 }))
-
-const AboutMe = () => {
-  const classes = useStyles()
-
-  return (
-    <section id="aboutMe">
-      <WidthContainer>
-        <Grid container justify="center">
-          <Grid xs={12} item>
-            <Grid container justify="center" className={classes.box}>
-              <Grid item xs={12} className={classes.heading}>
-                <Typography gutterBottom variant="h3" className={classes.title}>
-                  About Me
-                </Typography>
-                <Typography paragraph>
-                  What I find remarkable is that this text has been the industry's standard dummy
-                  text ever since some printer in the 1500s took a galley of type and scrambled it
-                  to make a type specimen book; it has survived not only four centuries of
-                  letter-by-letter resetting but even the leap into electronic typesetting,
-                  essentially unchanged except for an occasional 'ing' or 'y' thrown in. It's ironic
-                  that when the then-understood Latin was scrambled, it became as incomprehensible
-                  as Greek; the phrase 'it's Greek to me' and 'greeking' have common semantic
-                  roots!” (The editors published his letter in a correction headlined “Lorem
-                  Oopsum”)
-                </Typography>
-              </Grid>
-              <Grid item xs={12} className={classes.dividerContainer}>
-                <Divider variant="middle" className={classes.divider} />
-              </Grid>
-            </Grid>
-          </Grid>
-        </Grid>
-      </WidthContainer>
-    </section>
-  )
-}
 
 export default AboutMe
